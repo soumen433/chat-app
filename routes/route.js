@@ -6,13 +6,13 @@ const { protect } = require('../middlewares/auth');
 const { sendMessage, getMessageHistory } = require('../controller/messageController');
 const { register, login } = require('../controller/userController');
 
-router.post('/groups', protect, createGroup);
-router.post('/groups/:groupId/messages', protect, sendGroupMessage);
+router.post('/api/groups', protect, createGroup);
+router.post('api/groups/:groupId/messages', protect, sendGroupMessage);
 
-router.post('/messages', protect, sendMessage);
-router.get('/messages/history', protect, getMessageHistory);
+router.post('api/messages', protect, sendMessage);
+router.get('api/messages/history', protect, getMessageHistory);
 
-router.post('/register', register);
-router.post('/login', login);
+router.post('api/register', register);
+router.post('api/login', login);
 
 module.exports = router;
