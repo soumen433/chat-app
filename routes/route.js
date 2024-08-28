@@ -7,12 +7,12 @@ const { sendMessage, getMessageHistory } = require('../controller/messageControl
 const { register, login } = require('../controller/userController');
 
 router.post('/api/groups', protect, createGroup);
-router.post('api/groups/:groupId/messages', protect, sendGroupMessage);
+router.post('/api/groups/:groupId/messages', protect, sendGroupMessage);
 
-router.post('api/messages', protect, sendMessage);
-router.get('api/messages/history', protect, getMessageHistory);
+router.post('/api/messages', protect, sendMessage);
+router.get('/api/messages/history', protect, getMessageHistory);
 
-router.post('api/register', register);
-router.post('api/login', login);
+router.post('/api/register', register);
+router.post('/api/login', login);
 
 module.exports = router;
